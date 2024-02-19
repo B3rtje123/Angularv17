@@ -13,5 +13,5 @@ import { RouterOutlet } from '@angular/router';
   styles: [],
 })
 export class AppComponent {
-  title = 'walk-my-dog';
+  title = 'Angular v17 probeersels';
 }
