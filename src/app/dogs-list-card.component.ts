@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
   template: `
   <article class="pet-card">
+    
     <img class="[view-transition-name: image]" src="{{dog.photoUrl}}" alt="Photo of {{dog.name}}">
     <p class="pet-headline">Meet <span class="pet-name">{{dog.name}}</span></p>
     <p class="pet-description"> 

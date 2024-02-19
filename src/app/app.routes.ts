@@ -5,5 +5,6 @@ import { DogViewComponent } from './dog-view.component';
 export const routes: Routes = [
     {path: '', redirectTo: 'list', pathMatch: 'full'},
     {path: 'list', component: DogsListComponent},
-    {path: 'details/:index', loadComponent:() => import('./dog-view.component').then(m => m.DogViewComponent)}
+    {path: 'details/:index', component: DogViewComponent}
 ];
+// loadComponent:() => import('./dog-view.component').then(m => m.DogViewComponent)

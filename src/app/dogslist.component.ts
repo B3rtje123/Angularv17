@@ -13,12 +13,19 @@ import { DogsListCardComponent } from './dogs-list-card.component';
         Discover Pets to walk near you
       </h2>
     </section>
-    <article class="pet-list">
-      @for (dog of dogsService.dogs; track $index) {
-        <app-dogs-list-card [dog]="dog" [index]="$index"></app-dogs-list-card>
-      }
-      <!-- <app-dogs-list-card *ngFor="let dog of dogsService.dogs; let i = index" [index]="i" [dog]="dog"></app-dogs-list-card> -->
-    </article>
+    @defer () {
+      <article class="pet-list">
+        @for (dog of dogsService.dogs; track $index) {
+          <app-dogs-list-card [dog]="dog" [index]="$index"></app-dogs-list-card>
+        }@empty {
+          <p>List is empty</p>
+        }
+        <!-- <app-dogs-list-card *ngFor="let dog of dogsService.dogs; let i = index" [index]="i" [dog]="dog"></app-dogs-list-card> -->
+      </article>
+    }@loading {
+      <p>Loading...</p>
+    }
+
   `,
   styles: [`
   .pet-list {
