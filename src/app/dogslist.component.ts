@@ -13,7 +13,7 @@ import { DogsListCardComponent } from './dogs-list-card.component';
         Discover Pets to walk near you
       </h2>
     </section>
-    @defer () {
+    @defer  {
       <article class="pet-list">
         @for (dog of dogsService.dogs; track $index) {
           <app-dogs-list-card [dog]="dog" [index]="$index"></app-dogs-list-card>

@@ -7,4 +7,5 @@ export const routes: Routes = [
     {path: 'list', component: DogsListComponent},
     {path: 'details/:index', component: DogViewComponent}
 ];
-// loadComponent:() => import('./dog-view.component').then(m => m.DogViewComponent)
+// use this piece of coding to lazy load the routing of the DogViewComponent
+// loadComponent:() => import('./dog-view.component').then(m => m.DogViewComponent) 
