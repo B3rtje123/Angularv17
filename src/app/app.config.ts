@@ -9,8 +9,8 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(
       routes,
-      withViewTransitions(),
+      // The `withViewTransitions` function should enable view transitions (but it doesn't work for me)
+      withViewTransitions()
     ), 
-    provideAnimations(),
-    provideClientHydration()]
+  ]
 };

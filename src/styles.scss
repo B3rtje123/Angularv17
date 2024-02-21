@@ -2,3 +2,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face{
+  font-family: Poppins;
+  src: 
+  url('../src/assets/Fonts/Poppins/Poppins-Regular.ttf');
+}
+
+p{
+  @apply text-base my-4;
+}
+
+h1 {
+    // tailwindcss in a scss file for global styles
+  @apply text-4xl font-semibold text-center my-8;
+}
+h2 {
+  @apply text-3xl font-semibold my-4;
+}
+h3 {
+  @apply text-2xl ;
+}
+h4 {
+  @apply text-xl ;
+}

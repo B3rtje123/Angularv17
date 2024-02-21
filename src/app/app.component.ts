@@ -6,11 +6,10 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   template: `
-    <h1>Welcome to {{title}}!</h1>
+    <h1><a href="/">Welcome to {{title}}!</a></h1>
 
     <router-outlet />
   `,
-  styles: [],
 })
 export class AppComponent {
   title = 'Angular v17 probeersels';

@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
 
 export interface Dog {
+  id: number;
   name: string;
   ownerName: string;
   description: string;
@@ -9,10 +11,14 @@ export interface Dog {
   location: string;
 }
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ 
+  providedIn: 'root' 
+})
+
 export class DogsService {
-  dogs: Dog[] = [
+  private dogsSignal = signal<Dog[]>([
     {
+      id: 1,
       name: 'Robbie',
       ownerName: 'Esther Fraiser',
       description: 'Morbi in urna in nunc hendrerit dignissim.',
@@ -22,6 +28,7 @@ export class DogsService {
       location: 'Mountain View, CA',
     },
     {
+      id: 2,
       name: 'Oberon',
       ownerName: 'Rebecca Bustoire',
       description:
@@ -32,6 +39,7 @@ export class DogsService {
       location: 'Chicago, IL',
     },
     {
+      id: 3,
       name: 'Rin Tin',
       ownerName: 'Rachel Marzo',
       description:
@@ -42,6 +50,7 @@ export class DogsService {
       location: 'Boston, MA',
     },
     {
+      id: 4,
       name: 'Lasser',
       ownerName: 'Lashawn Pierre',
       description: 'In quis nisl ac sem hendrerit hendrerit.',
@@ -51,6 +60,7 @@ export class DogsService {
       location: 'Las Vegas, NV',
     },
     {
+      id: 5,
       name: 'Capo',
       ownerName: 'Tosin Leaders',
       description: 'In quis nisl ac sem hendrerit hendrerit.',
@@ -60,6 +70,7 @@ export class DogsService {
       location: 'Reno, NV',
     },
     {
+      id: 6,
       name: 'Party',
       ownerName: 'Harold Bria',
       description: 'In quis nisl ac sem hendrerit hendrerit.',
@@ -68,5 +79,12 @@ export class DogsService {
       photoUrl: 'https://images.pexels.com/photos/1189673/pexels-photo-1189673.jpeg?auto=compress&cs=tinysrgb&w=600',
       location: 'Detroit, MI',
     },
-  ];
+  ])
+
+  readonly dogsList = this.dogsSignal.asReadonly();
+
+  constructor() {
+    // this is where you would inject any dependencies
+  }
+
 }

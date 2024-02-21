@@ -8,44 +8,16 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-  <article class="pet-card">
+  <a href="/details/{{index}}" class="flex flex-col rounded-lg shadow-lg w-80 overflow-hidden hover:scale-110 ease-in-out duration-300 border-2 border-gray-300">
     
-    <img class="[view-transition-name: image]" src="{{dog.photoUrl}}" alt="Photo of {{dog.name}}">
-    <p class="pet-headline">Meet <span class="pet-name">{{dog.name}}</span></p>
-    <p class="pet-description"> 
-      <span class="pet-name">{{dog.ownerName}}</span> wants you to know this about {{dog.name}}:
+    <img style="view-transition-name: image;" src="{{dog.photoUrl}}" alt="Photo of {{dog.name}}">
+    <p class="mx-4 mt-4 text-lg">Meet <span class="font-semibold">{{dog.name}}</span></p>
+    <p class="m-4 line-clamp-3"> 
+      <span class="font-semibold">{{dog.ownerName}}</span> wants you to know this about {{dog.name}}:
       {{dog.description}}
     </p>
-    <p class="pet-learn-more"><a href="/details/{{index}}">Learn More</a></p>
-  <article>
+  </a>
   `,
-  styles: [`
-  .pet-card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-    width: 300px;
-  }
-
-  .pet-img {
-    border-radius: 10px 10px 0 0;
-    width: 300px;
-    view-transition-name: image;
-  }
-
-  .pet-name {
-    font-weight: bolder;
-  }
-
-  .pet-description, .pet-headline, .pet-learn-more {
-    padding: 10px;
-  }
-
-  .pet-headline {
-    font-size: 18pt;
-  }
-`]
 })
 export class DogsListCardComponent implements OnInit{
 
