@@ -2,10 +2,11 @@ import { mergeApplicationConfig, ApplicationConfig, provideZoneChangeDetection }
 import { provideServerRendering } from '@angular/platform-server';
 import { appConfig } from './app.config';
 import { withViewTransitions } from '@angular/router';
+import { provideClientHydration } from '@angular/platform-browser';
 
 const serverConfig: ApplicationConfig = {
   providers: [
-    // provideServerRendering()
+    provideClientHydration(),
   ]
 };
 

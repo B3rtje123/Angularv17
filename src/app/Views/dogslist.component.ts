@@ -1,7 +1,7 @@
 import { Component, OnInit, computed, signal, effect, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DogsService, Dog } from '../dogs.service';
-import { DogsListCardComponent } from '../dogs-list-card.component';
+import { DogsService, Dog } from '../Services/dogs.service';
+import { DogsListCardComponent } from '../Components/dogs-list-card.component';
 
 @Component({
   selector: 'app-dogs-list',
@@ -26,7 +26,6 @@ import { DogsListCardComponent } from '../dogs-list-card.component';
             <h1 class="text-2xl text-gray-500">No data available</h1>
           </div>                                                                              
         }
-
         <!-- the old way of doing a for loop in Angular -->
         <!-- <app-dogs-list-card *ngFor="let dog of dogsService.dogs; let i = index" [index]="i" [dog]="dog"></app-dogs-list-card> -->
       </article>

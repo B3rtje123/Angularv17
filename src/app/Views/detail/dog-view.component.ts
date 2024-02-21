@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, Signal, computed, effect, signal } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { Dog, DogsService } from '../../dogs.service'; 
+import { Dog, DogsService } from '../../Services/dogs.service'; 
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { count } from '../dogslist.component'; 
 
